@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default class Request {
-  host_url = 'http://localhost:8000';
+  host_url = 'https://magalu-finder-bruno.herokuapp.com';
   headers = {
     "Accept": "application/json",
     "Content-Type": "application/json"
