@@ -60,6 +60,7 @@ class Produto extends Component {
   } 
 
   upProduto = (event) => {
+    event.preventDefault();
     let obj = {
       id: this.state.id,
       cod_produto: this.state.cod_produto,
@@ -164,8 +165,8 @@ class Produto extends Component {
                             <input type="text" className="form-control" onChange={this.handleInputChange} value={this.state.cod_produto} id="cod_produto" name="cod_produto"/>
                           </div>
                           <div className="form-group col-12">
-                            <label htmlFor="valor_venda">Cep</label>
-                            <input type="text" className="form-control" onChange={this.handleInputChange} value={this.state.valor_venda} id="valor_venda" name="valor_venda" placeholder="R$ 1000.90"/>
+                            <label htmlFor="valor_venda">Valor de venda</label>
+                            <input type="text" className="form-control" onChange={this.handleInputChange} value={this.state.valor_venda} id="valor_venda" name="valor_venda" placeholder="1000.90"/>
                           </div>
                         </div>
                       </div>
@@ -199,8 +200,8 @@ class Produto extends Component {
 													<input type="text" className="form-control" onChange={this.handleInputChange} value={this.state.cod_produto} id="cod_produto" name="cod_produto"/>
 												</div>
 												<div className="form-group col-12">
-													<label htmlFor="valor_venda">Cep</label>
-													<input type="text" className="form-control" onChange={this.handleInputChange} value={this.state.valor_venda} id="valor_venda" name="valor_venda" placeholder="R$ 1000.90"/>
+													<label htmlFor="valor_venda">Valor de venda</label>
+													<input type="text" className="form-control" onChange={this.handleInputChange} value={this.state.valor_venda} id="valor_venda" name="valor_venda" placeholder="1000.90"/>
 												</div>
 											</div>
 										</div>
