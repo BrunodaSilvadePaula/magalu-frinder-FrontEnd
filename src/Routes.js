@@ -4,6 +4,7 @@ import App from './App';
 import Login from './login/Login';
 import Loja from './lojas/Loja';
 import Produto from './produtos/Produto';
+import Usuario from './usuarios/Usuario';
 
 // const PrivateRoute = ({ component: Component, ...rest  }) => (  
 //   <Route {...rest} render={(props) => (
@@ -18,6 +19,7 @@ const Rotas = () => (
       <Route path="/login" component={Login}/>
       <Route path="/loja" component={Loja}/>
       <Route path="/produto" component={Produto}/>
+      <Route path="/usuario" component={Usuario}/>
     </Switch>
   </Router>
 );
