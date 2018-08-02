@@ -35,7 +35,6 @@ class Produto extends Component {
      });
   }
   handleDelete = (produto) => {
-    console.log(produto);
      this.setState({
        id: produto.id,
        cod_produto: produto.cod_produto,
