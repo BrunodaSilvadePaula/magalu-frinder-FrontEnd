@@ -37,7 +37,11 @@ class Usuario extends Component {
 				[name]: value
 		});
 	}
-
+  handleDelete = (usuario) => {
+     this.setState({
+       id: usuario.id,
+     });
+  }
   async componentWillMount(){
     await usuario.getUsuarios().then(response =>{
       if(response.status === 200){
@@ -56,6 +60,7 @@ class Usuario extends Component {
           <tr key={index}>
             <th scope="row">{usuario.id}</th>
             <td>{usuario.username}</td>
+            <td><button  type="button" className="btn btn-danger" data-toggle="modal" data-target=".delete" onClick={() => this.handleDelete(usuario)}>Deletar</button></td>
           </tr>
         )
       });
@@ -82,7 +87,15 @@ class Usuario extends Component {
       Message.error('Erro', 'Não foi possivel Cadastrar este usuario verifique as informações!');
     })
   }
-
+  delUsuario = (event) =>{
+    usuario.deleteUsuario(this.state.id).then(response => {
+      Message.success('Sucesso', 'Usuario deletado com sucesso!');
+      window.location.reload();
+    })
+    .catch(err => {
+      Message.error('Erro', 'Não foi possivel deletar este usuario!');
+    });
+  }
   render() {
     return(
       <Container>
@@ -138,6 +151,23 @@ class Usuario extends Component {
             </div>
           </div>
         </div>
+        <div className="modal fade delete" tabIndex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+          <div className="modal-dialog modal-sm">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="createLabel">Tem certeza que deseja Excluir ?</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                  <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button className="btn btn-danger float-right" onClick={this.delUsuario}>Deletar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </Container>
     );
   }

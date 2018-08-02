@@ -9,4 +9,8 @@ export default class UsuarioRequest extends Request{
   createUsuario(obj){
     return this.request('/usuario/', 'POST', obj);
   }
+
+  deleteUsuario(id){
+    return this.request(`/usuario/${id}/`, 'DELETE');
+  }
 }
