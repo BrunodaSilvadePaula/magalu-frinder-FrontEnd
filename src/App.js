@@ -97,7 +97,7 @@ class App extends Component {
     if(this.state.spiner === true){
     return(
       <div className="App">
-        <img src={spiner} className="spiner" alt="logo" />
+        <img src={spiner} className="spiner" alt="carregando..." />
       </div>
     );
     }else{
@@ -106,7 +106,7 @@ class App extends Component {
             <header className="App-header">
             <img src={logo} alt="logo" />
             <h1 className="App-title">Bem vindo ao Magalu Finder</h1>
-            <h6>Para encontrar a loja mais próxima que contem o seu produto,</h6>
+            <h6>Para encontrar a loja mais próxima que contém o seu produto,</h6>
             <h6>entre com o nome ou código do produto, e seu cep</h6>
           </header>
           <div className="container">
